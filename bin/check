@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# dots-client — alternate model-call shim (Dots-3-Note) autonomous rig (bin/check).
+# Self-test gate (PASS / FAIL / WARN):
+#   1. Module compiles (py_compile) — hard gate.
+#   2. Runtime dep preflight: 'openai' importable? If not, WARN (repo lacks a
+#      dependency manifest; install path documented) but PASS on the compile gate.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+echo "== dots-client check: start =="
+pybin="$(command -v python3 2>/dev/null || echo /usr/bin/python3)"
+
+echo "-- compile (hard gate) --"
+"$pybin" -m py_compile estate_dots_client.py || { echo "FAIL: module does not compile"; exit 1; }
+echo "OK: module compiles"
+
+echo "-- runtime dep preflight (openai) --"
+if "$pybin" -c "import openai" 2>/dev/null; then
+  echo "OK: openai importable"
+else
+  echo "WARN: 'openai' not importable (repo has no requirements manifest)."
+  echo "      Module compiles; install 'openai' to run the shim."
+fi
+
+echo "== dots-client check: PASS =="

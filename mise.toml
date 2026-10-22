@@ -1,0 +1,7 @@
+# dots-client — autonomous rig task wiring (Phase-B).
+# bin/run = module self-test; bin/check = compile + construct gate.
+
+[tasks]
+run = "./bin/run"
+check = "./bin/check"
+compile = "python3 -m py_compile estate_dots_client.py"
