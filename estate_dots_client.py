@@ -6,7 +6,7 @@ Neutralizes: Ghost outputs, list:string mismatches, 22s latency, and replay cras
 import json
 from openai import OpenAI
 
-class estate_scripts_dots_client:
+class estate-scriptsDotsClient:
     def __init__(self, api_key: str):
         self.client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
