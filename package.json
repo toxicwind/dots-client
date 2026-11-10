@@ -1,0 +1,22 @@
+{
+  "name": "estate-dots-client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "bun --hot run estate_dots_client.py",
+    "test": "bun test",
+    "typecheck": "tsgo --noEmit -p tsconfig.json",
+    "lint": "biome check .",
+    "fmt": "biome format --write .",
+    "build": "bun build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun-types": "latest",
+    "typescript": "latest",
+    "@biomejs/biome": "latest"
+  },
+  "bin": {},
+  "type": "module"
+}
