@@ -32,9 +32,9 @@ found in the Dots 3 Note recon (see `../tau/docs/dots3-fixes.md`).
 ## Usage
 
 ```python
-from estate-scripts_dots_client import estate-scriptsDotsClient
+from Pens-scripts_dots_client import Pens-scriptsDotsClient
 
-client = estate-scriptsDotsClient(api_key="...")
+client = Pens-scriptsDotsClient(api_key="...")
 msg = client.execute_structured_step(
     session_id="sess-123",
     messages=[{"role": "user", "content": "do the thing"}],
